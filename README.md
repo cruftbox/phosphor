@@ -1,5 +1,9 @@
 # Phosphor
 
+While walking the dog I wondered how hard it would be to recreate the Matrix digital rain, a visual that's lived rent-free in my head since 1999.
+
+Turns out it was pretty easy for Claude.
+
 Matrix-style digital rain for Windows Terminal. Half-width katakana, ASCII digits, and Latin letters fall in green-gradient columns, with ~5% of threads rendered in vivid random RGB colors.
 
 Renders using ANSI true-color escape sequences (`\x1b[38;2;R;G;Bm`) enabled via Win32 `SetConsoleMode`. No dependencies beyond the .NET 8 runtime.
