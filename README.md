@@ -4,29 +4,33 @@ Matrix-style digital rain for Windows Terminal. Half-width katakana, ASCII digit
 
 Renders using ANSI true-color escape sequences (`\x1b[38;2;R;G;Bm`) enabled via Win32 `SetConsoleMode`. No dependencies beyond the .NET 8 runtime.
 
-## Prerequisites
+## Download
 
-- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) or later
-- Windows 10 or Windows 11 (requires Win32 console API + ANSI VT support)
-- A terminal that supports 24-bit true color — **Windows Terminal** is recommended
+Grab the latest `Phosphor.exe` from the [Releases](https://github.com/cruftbox/phosphor/releases) page. It is self-contained — no .NET installation required.
 
-## Build
+## Build from source
 
-```
-dotnet build
-```
-
-## Run
+Requires the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0).
 
 ```
 dotnet run
 ```
 
-Or after building:
+To produce a self-contained single-file executable:
 
 ```
-.\bin\Debug\net8.0\Phosphor.exe
+dotnet restore -r win-x64
+dotnet publish -c Release -r win-x64 --self-contained -p:PublishSingleFile=true --no-restore
 ```
+
+Output: `bin\Release\net8.0\win-x64\publish\Phosphor.exe`
+
+## Requirements
+
+- Windows 10 or Windows 11
+- A terminal that supports 24-bit true color — **Windows Terminal** is recommended
+
+## Exit
 
 Press **Escape** or **Q** to quit. **Ctrl+C** also exits cleanly — the cursor and terminal color state are always restored.
 
@@ -36,13 +40,12 @@ Half-width katakana characters (U+FF65–U+FF9F) require a font that includes CJ
 
 **Windows Terminal:** Settings → Profiles → Defaults → Appearance → Font face → `MS Gothic` (or `NSimSun`, or any CJK-capable monospace font).
 
-Alternatively, add a dedicated profile that sets the font only for Phosphor:
+To set the font only for Phosphor, add a dedicated profile in Windows Terminal settings:
 
 ```json
 {
     "name": "Phosphor",
-    "commandline": "\"C:\\Program Files\\dotnet\\dotnet.exe\" run --project \"C:\\path\\to\\phosphor\"",
-    "startingDirectory": "C:\\path\\to\\phosphor",
+    "commandline": "C:\\path\\to\\Phosphor.exe",
     "font": { "face": "MS Gothic", "size": 12 }
 }
 ```
