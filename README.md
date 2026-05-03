@@ -29,7 +29,7 @@ Output: `bin\Release\net8.0\win-x64\publish\Phosphor.exe`
 
 ## Requirements
 
-- Windows 10 or Windows 11
+- Windows 10 or Windows 11, **x64** (the release binary targets `win-x64`; ARM Windows is not currently supported)
 - A terminal that supports 24-bit true color — **Windows Terminal** is recommended
 
 ## Exit
@@ -51,6 +51,10 @@ To set the font only for Phosphor, add a dedicated profile in Windows Terminal s
     "font": { "face": "MS Gothic", "size": 12 }
 }
 ```
+
+## License
+
+MIT — see [LICENSE](LICENSE).
 
 ## How it works
 
