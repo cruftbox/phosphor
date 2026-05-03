@@ -4,6 +4,8 @@ Matrix-style digital rain for Windows Terminal. Half-width katakana, ASCII digit
 
 Renders using ANSI true-color escape sequences (`\x1b[38;2;R;G;Bm`) enabled via Win32 `SetConsoleMode`. No dependencies beyond the .NET 8 runtime.
 
+![Phosphor demo](phosphor-animated-demo.png)
+
 ## Download
 
 Grab the latest `Phosphor.exe` from the [Releases](https://github.com/cruftbox/phosphor/releases) page. It is self-contained — no .NET installation required.
