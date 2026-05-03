@@ -257,6 +257,11 @@ internal sealed class Renderer
 
         for (int row = 0; row < height; row++)
         {
+            // Absolute cursor position at row start prevents drift from double-width glyphs
+            _sb.Append("\x1b[");
+            _sb.Append(row + 1);
+            _sb.Append(";1H");
+
             for (int col = 0; col < width; col++)
             {
                 int idx = row * width + col;
@@ -368,8 +373,8 @@ internal sealed class PhosphorApp
 
     private static Column[] CreateColumns(Random rng, int width, int height)
     {
-        var cols = new Column[width];
-        for (int i = 0; i < width; i++)
+        var cols = new Column[width * 2];
+        for (int i = 0; i < width * 2; i++)
         {
             cols[i] = new Column();
             cols[i].Initialize(rng, width, height);
