@@ -4,7 +4,7 @@ Matrix-style digital rain for Windows Terminal. Half-width katakana, ASCII digit
 
 Renders using ANSI true-color escape sequences (`\x1b[38;2;R;G;Bm`) enabled via Win32 `SetConsoleMode`. No dependencies beyond the .NET 8 runtime.
 
-![Phosphor demo](phosphor-animated-demo.png)
+<p align="center"><img src="phosphor-animated-demo.png" alt="Phosphor demo" /></p>
 
 ## Download
 
