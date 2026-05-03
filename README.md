@@ -27,8 +27,7 @@ dotnet run
 To produce a self-contained single-file executable:
 
 ```
-dotnet restore -r win-x64
-dotnet publish -c Release -r win-x64 --self-contained -p:PublishSingleFile=true --no-restore
+dotnet publish -c Release -r win-x64 --self-contained -p:PublishSingleFile=true
 ```
 
 Output: `bin\Release\net8.0\win-x64\publish\Phosphor.exe`
