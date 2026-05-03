@@ -1,9 +1,10 @@
 // Phosphor — Matrix-style digital rain for Windows terminal
-// Types defined below: NativeMethods, CharSet, ColorUtils, Column, Renderer, PhosphorApp
 
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
+
+new PhosphorApp().Run();
 
 [StructLayout(LayoutKind.Sequential)]
 internal struct COORD { public short X; public short Y; }
@@ -379,5 +380,3 @@ internal sealed class PhosphorApp
         return cols;
     }
 }
-
-new PhosphorApp().Run();
